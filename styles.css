@@ -4,3 +4,25 @@
 @media(max-width:800px){.video-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.hero{min-height:275px}.orb-one{right:-25px}.orb-two{right:30px}.shorts-feed{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:480px){.topbar{height:66px;gap:9px;padding:0 13px}.brand{font-size:15px;gap:7px}.brand-mark{width:30px;height:30px;border-radius:10px}.search-wrap{height:39px;padding:0 10px}.search-wrap input{font-size:12px}.icon-btn{width:38px;height:38px}main{padding:18px 14px}.hero{padding:28px 22px;border-radius:23px;min-height:270px}.hero h1{font-size:46px;letter-spacing:-2.4px}.hero p{max-width:230px;font-size:12px;line-height:1.6}.orb-one{width:125px;height:125px;top:28px;right:-34px}.orb-two{width:66px;height:66px;right:2px;top:58px}.section-heading{margin-top:28px}.section-heading h2,.shorts-header h2{font-size:22px}.video-grid{gap:15px 11px}.thumb{border-radius:13px}.video-card h3{font-size:12px}.video-card p{font-size:10px}.empty-state{padding:38px 12px}.player-shell{border-radius:12px}.player-info{align-items:start}.player-info h2{font-size:20px}.shorts-feed{gap:10px}.short-card{border-radius:15px}.upload-panel{margin-top:12px}.dropzone{min-height:210px}.bottom-nav{height:70px}}
 
 .youtube-thumb{width:100%;height:100%;object-fit:cover;display:block}.youtube-card .thumb{background:#151923}.youtube-card .thumb-fallback{position:absolute;inset:0;display:grid;place-items:center;background:linear-gradient(135deg,#252b3a,#121722)}.youtube-player-shell iframe{display:block;width:100%;aspect-ratio:16/9;border:0}.settings-dialog{width:min(520px,calc(100% - 28px));padding:0;border:1px solid #343d4e;border-radius:22px;background:#11151e;color:var(--text);box-shadow:0 24px 90px #000a}.settings-dialog::backdrop{background:#000b;backdrop-filter:blur(6px)}.settings-card{padding:24px}.settings-head{display:flex;justify-content:space-between;align-items:center;gap:12px}.settings-head h2{font:600 25px 'Space Grotesk',sans-serif;margin:0}.field-label{display:block;color:#b8c0cf;font-size:12px;margin:16px 0 8px}.api-key-input{width:100%;border:1px solid #343d4e;background:#0b0e14;color:var(--text);padding:13px;border-radius:12px;outline:none}.api-key-input:focus{border-color:#ff6475}.settings-actions{display:flex;justify-content:flex-end;gap:10px;margin-top:18px}.settings-actions .primary-btn{box-shadow:none}.field-label input{accent-color:var(--red);vertical-align:middle;margin-right:7px}.youtube-card h3{white-space:normal;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;line-height:1.4}.youtube-card p{line-height:1.5}.youtube-badge{position:absolute;left:9px;bottom:9px;background:#ff4057e8;color:#fff;font-size:9px;padding:4px 7px;border-radius:6px;font-weight:700}
+
+/* OM Tube design refresh: original branding, responsive video-first layout, dark/light themes. */
+:root{--bg:#101114;--panel:#18191d;--panel2:#222329;--text:#f5f5f5;--muted:#a6a7ad;--line:#303137;--red:#ff3548;--orange:#ff6b55;--green:#5ce0a4;color-scheme:dark}
+:root[data-theme="light"]{--bg:#f7f7f8;--panel:#fff;--panel2:#f0f0f2;--text:#171719;--muted:#65666d;--line:#dedee3;--red:#e52235;--orange:#ff684f;--green:#168a5c;color-scheme:light}
+body{background:var(--bg);color:var(--text)}
+.topbar{background:color-mix(in srgb,var(--bg) 94%,transparent);border-bottom-color:var(--line)}
+.search-wrap{background:var(--panel2);border-color:var(--line);border-radius:999px}
+.icon-btn{background:var(--panel2);border-color:var(--line);color:var(--text)}
+.hero{background:radial-gradient(ellipse at 82% 5%,color-mix(in srgb,var(--red) 20%,transparent),transparent 37%),linear-gradient(115deg,var(--panel2),var(--panel) 68%,color-mix(in srgb,var(--red) 10%,var(--panel)));border-color:var(--line)}
+.hero h1 em,.upload-panel h1 em{color:var(--red)}
+.video-card .thumb{border-radius:14px;background:var(--panel2)}
+.video-card h3{font-size:14px;line-height:1.4}
+.video-card p{font-size:12px}
+.bottom-nav{background:color-mix(in srgb,var(--bg) 96%,transparent);border-top-color:var(--line)}
+.nav-item.active{color:var(--red)}
+.settings-dialog{background:var(--panel);border-color:var(--line);color:var(--text)}
+.api-key-input{background:var(--bg);color:var(--text);border-color:var(--line)}
+.dropzone{background:var(--panel);border-color:var(--line)}
+.secondary-btn{background:var(--panel2);border-color:var(--line);color:var(--text)}
+.count,.pill{border-color:var(--line);color:var(--muted)}
+.toast{background:var(--panel2);border-color:var(--line);color:var(--text)}
+@media(min-width:900px){.video-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}.shorts-feed{grid-template-columns:repeat(4,minmax(0,1fr))}}

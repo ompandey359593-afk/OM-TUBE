@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#090b10">
+  <meta name="theme-color" content="#101114">
   <meta name="description" content="OM Tube: your personal video universe.">
   <link rel="manifest" href="manifest.json">
   <link rel="stylesheet" href="styles.css">
@@ -15,6 +15,7 @@
       <span class="brand-mark">▶</span><span>OM <b>TUBE</b></span>
     </button>
     <label class="search-wrap"><span>⌕</span><input id="search" type="search" placeholder="Search videos..." autocomplete="off"></label>
+    <button id="themeToggle" class="icon-btn" title="Switch theme" aria-label="Switch theme">☼</button>
     <button id="apiSettings" class="icon-btn" title="YouTube API settings" aria-label="YouTube API settings">⚙</button>
     <button id="uploadTop" class="icon-btn" title="Upload video" aria-label="Upload video">＋</button>
   </header>
@@ -28,7 +29,7 @@
         <button class="primary-btn" id="heroUpload">＋ Add your first video</button>
         <div class="hero-orb orb-one"></div><div class="hero-orb orb-two"></div>
       </div>
-      <div class="section-heading"><div><p class="eyebrow">YOUTUBE SEARCH</p><h2>Discover on YouTube</h2></div><span class="count">Official API</span></div>
+      <div class="section-heading"><div><p class="eyebrow">VIDEO DISCOVERY</p><h2>Find something to watch</h2></div><span class="count">Official API</span></div>
       <p id="youtubeHint" class="muted">Add your YouTube Data API key in ⚙ settings to search public YouTube videos here.</p>
       <div id="youtubeStatus" class="status" aria-live="polite"></div>
       <div id="youtubeGrid" class="video-grid"></div>

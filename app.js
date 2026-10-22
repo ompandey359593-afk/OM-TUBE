@@ -172,10 +172,14 @@ function playYoutube(videoId, title) {
   $('localPlayerShell').hidden = true;
   $('youtubePlayerShell').hidden = false;
   const frame = document.createElement('iframe');
-  frame.src = `https://www.youtube-nocookie.com/embed/${encodeURIComponent(videoId)}?autoplay=1`;
+  const embedParams = new URLSearchParams({ autoplay: '1', playsinline: '1', origin: location.origin });
+  frame.src = `https://www.youtube.com/embed/${encodeURIComponent(videoId)}?${embedParams.toString()}`;
   frame.title = title || 'YouTube video';
+  frame.setAttribute('loading', 'eager');
   frame.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
-  frame.referrerPolicy = 'strict-origin-when-cross-origin';
+  // YouTube Error 153 can occur when the embed request lacks a usable referrer.
+  // Use the official YouTube embed endpoint and send only the app origin.
+  frame.referrerPolicy = 'origin';
   frame.allowFullscreen = true;
   $('youtubePlayerShell').replaceChildren(frame);
   $('playerTitle').textContent = title || 'YouTube video';
@@ -238,6 +242,16 @@ $('deleteVideo').addEventListener('click', async () => {
 });
 $('libraryNav').addEventListener('click', () => { $('search').focus(); navigate('home'); });
 $('apiSettings').addEventListener('click', openSettings);
+function applyTheme(theme) {
+  document.documentElement.dataset.theme = theme;
+  localStorage.setItem('om-tube-theme', theme);
+  const button = $('themeToggle');
+  if (button) { button.textContent = theme === 'light' ? '☾' : '☼'; button.setAttribute('aria-label', theme === 'light' ? 'Switch to dark theme' : 'Switch to light theme'); }
+  const meta = document.querySelector('meta[name=theme-color]');
+  if (meta) meta.content = theme === 'light' ? '#f7f7f8' : '#101114';
+}
+applyTheme(localStorage.getItem('om-tube-theme') || 'dark');
+$('themeToggle').addEventListener('click', () => applyTheme(document.documentElement.dataset.theme === 'light' ? 'dark' : 'light'));
 $('closeSettings').addEventListener('click', () => $('settingsDialog').close());
 $('settingsForm').addEventListener('submit', e => {
   e.preventDefault();

@@ -1,4 +1,4 @@
-const CACHE = 'om-tube-shell-v1';
+const CACHE = 'om-tube-shell-v2';
 const SHELL = ['./', './index.html', './styles.css', './app.js', './manifest.json'];
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(SHELL)).then(() => self.skipWaiting()));
