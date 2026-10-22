@@ -1,0 +1,11 @@
+{
+  "name": "OM Tube",
+  "short_name": "OM Tube",
+  "description": "Your personal video universe",
+  "start_url": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#090b10",
+  "theme_color": "#090b10",
+  "icons": []
+}
